@@ -10,19 +10,17 @@ const patientSchema = new mongoose.Schema({
     surname: String,
     id: String,
   },
-  fieldGroups: [
-    {
-      name: String,
-      fields: [
-        {
-          name: String,
-          type: { type: String },
-          // TODO: Change later depending on requirements
-          content: Object,
-        },
-      ],
-    },
-  ],
+  birthDate: Date,
+  sex: String,
+  address: String,
+  idnp: Number,
+  phone: Number,
+  examinationDate: Date,
+  acuses: String,
+  objectiveExam: String,
+  investigationResults: String,
+  diagnosis: String,
+  recommendations: String,
 });
 
 export const Patient = mongoose.model(
