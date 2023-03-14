@@ -14,7 +14,6 @@ import {
 import {
   authRouter,
   patientsRouter,
-  patientTypesRouter,
   usersRouter,
 } from "controllers";
 
@@ -39,7 +38,6 @@ app.use(tokenValidator);
 
 app.use("/api/users", usersRouter);
 app.use("/api/patients", patientsRouter);
-app.use("/api/patient-types", patientTypesRouter);
 
 app.use(unknownEndpoint);
 
