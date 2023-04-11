@@ -18,6 +18,6 @@ const appointmentSchema = new mongoose.Schema({
 });
 
 export const Appointment = mongoose.model(
-  "Patient",
+  "Appointment",
   formatMongoSchema(appointmentSchema)
 );
