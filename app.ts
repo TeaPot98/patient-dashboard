@@ -9,13 +9,9 @@ import {
   errorLogger,
   errorHandler,
   failSaveHandler,
-  tokenValidator,
+  // tokenValidator,
 } from "middlewares";
-import {
-  authRouter,
-  patientsRouter,
-  usersRouter,
-} from "controllers";
+import { authRouter, patientsRouter, usersRouter } from "controllers";
 
 const app = express();
 
@@ -34,7 +30,7 @@ app.use(requestLogger);
 
 app.use("/api/auth", authRouter);
 
-app.use(tokenValidator);
+// app.use(tokenValidator);
 
 app.use("/api/users", usersRouter);
 app.use("/api/patients", patientsRouter);

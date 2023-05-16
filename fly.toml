@@ -1,10 +1,15 @@
-# fly.toml file generated for patient-dashboard on 2023-04-11T20:57:17+03:00
+# fly.toml app configuration file generated for patient-dashboard on 2023-04-24T20:36:33+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
 app = "patient-dashboard"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "otp"
 processes = []
+
+[build]
 
 [env]
   PORT = "8080"
