@@ -1,13 +1,18 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from "express";
 import { logger } from "utils";
 import { CustomError } from "utils";
+import path from "path";
 
 export const unknownEndpoint = (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  res.status(404).send({ error: "Unknown endpoint" });
+  res.sendFile("index.html", { root: path.resolve("build") }, function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 };
 
 export const errorLogger: ErrorRequestHandler = (err, req, res, next) => {

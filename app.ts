@@ -1,6 +1,7 @@
 import express, { Request } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+// import path from "path";
 
 import { MONGODB_URI, logger } from "utils";
 import {
@@ -34,6 +35,14 @@ app.use("/api/auth", authRouter);
 
 app.use("/api/users", usersRouter);
 app.use("/api/patients", patientsRouter);
+
+// app.get("/*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "build/index.html"), function (err) {
+//     if (err) {
+//       res.status(500).send(err);
+//     }
+//   });
+// });
 
 app.use(unknownEndpoint);
 
