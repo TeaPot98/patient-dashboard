@@ -6,6 +6,9 @@ FROM node:${NODE_VERSION}-slim as base
 
 LABEL fly_launch_runtime="NodeJS"
 
+# Copy the front-end build directory into the Docker image
+COPY build /app/build
+
 # NodeJS app lives here
 WORKDIR /app
 

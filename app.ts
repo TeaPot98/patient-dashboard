@@ -1,7 +1,6 @@
 import express, { Request } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-// import path from "path";
 
 import { MONGODB_URI, logger } from "utils";
 import {
@@ -10,7 +9,7 @@ import {
   errorLogger,
   errorHandler,
   failSaveHandler,
-  // tokenValidator,
+  tokenValidator,
 } from "middlewares";
 import { authRouter, patientsRouter, usersRouter } from "controllers";
 
@@ -31,18 +30,10 @@ app.use(requestLogger);
 
 app.use("/api/auth", authRouter);
 
-// app.use(tokenValidator);
+app.use(tokenValidator);
 
 app.use("/api/users", usersRouter);
 app.use("/api/patients", patientsRouter);
-
-// app.get("/*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "build/index.html"), function (err) {
-//     if (err) {
-//       res.status(500).send(err);
-//     }
-//   });
-// });
 
 app.use(unknownEndpoint);
 
