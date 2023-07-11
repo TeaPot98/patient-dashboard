@@ -15,6 +15,8 @@ import { authRouter, patientsRouter, usersRouter } from "controllers";
 
 const app = express();
 
+mongoose.set("strictQuery", true);
+
 mongoose
   .connect(MONGODB_URI)
   .then(() => {
