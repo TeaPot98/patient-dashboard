@@ -5,11 +5,13 @@ import { formatMongoSchema } from "./utils";
 const patientSchema = new mongoose.Schema({
   name: String,
   surname: String,
-  birthDate: Date,
-  sex: String,
-  address: String,
   idnp: String,
-  phone: String,
+  birthDate: Date,
+  consultationDate: Date,
+  acuses: String,
+  neurologicalStatus: String,
+  diagnosis: String,
+  treatment: String,
 });
 
 export const Patient = mongoose.model(
