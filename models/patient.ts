@@ -6,7 +6,7 @@ const patientSchema = new mongoose.Schema({
   name: String,
   surname: String,
   idnp: String,
-  birthDate: Date,
+  age: String,
   consultationDate: Date,
   acuses: String,
   neurologicalStatus: String,

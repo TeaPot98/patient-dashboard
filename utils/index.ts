@@ -5,3 +5,4 @@ export * from "./get-token";
 export * from "./get-logged-user";
 export * from "./get-patient";
 export * from "./get-user";
+export * from "./get-observation-sheet";

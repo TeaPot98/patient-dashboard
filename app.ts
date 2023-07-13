@@ -12,6 +12,7 @@ import {
   tokenValidator,
 } from "middlewares";
 import { authRouter, patientsRouter, usersRouter } from "controllers";
+import { observationSheetsRouter } from "controllers/observationSheets";
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use(tokenValidator);
 
 app.use("/api/users", usersRouter);
 app.use("/api/patients", patientsRouter);
+app.use("/api/observation-sheets", observationSheetsRouter);
 
 app.use(unknownEndpoint);
 
