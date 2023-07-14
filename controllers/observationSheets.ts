@@ -36,10 +36,12 @@ observationSheetsRouter.get("/", async (req, res, next) => {
       : {};
 
     // Search for patients with the given filter
-    const observationSheet = await ObservationSheet.find(filter);
+    const observationSheets = await ObservationSheet.find(filter).sort({
+      consultationDate: -1,
+    });
 
     // Send the search results back as a JSON response
-    res.json(observationSheet);
+    res.json(observationSheets);
   } catch (err) {
     next(err);
   }
