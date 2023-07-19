@@ -36,7 +36,9 @@ patientsRouter.get("/", async (req, res, next) => {
       : {};
 
     // Search for patients with the given filter
-    const patients = await Patient.find(filter);
+    const patients = await Patient.find(filter).sort({
+      consultationDate: -1,
+    });
 
     // Send the search results back as a JSON response
     res.json(patients);
