@@ -11,6 +11,7 @@ const patientSchema = new mongoose.Schema({
   acuses: String,
   neurologicalStatus: String,
   diagnosis: String,
+  address: String,
   treatment: String,
 });
 
